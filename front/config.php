@@ -48,8 +48,8 @@ switch ($_GET['config']) {
 }
 
 	else {
-			// if there is no righ go to plugins
-			echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=../../../front/plugin.php'>";
+			//Permission error
+			Html::displayRightError();
 	}
 
 ?>

@@ -128,6 +128,7 @@
 	Html::footer();
 	}
 		else {
-	    echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=../../../front/plugin.php'>"; //if there is no righ go to plugins
+			//Permission error
+			Html::displayRightError();
 		}
 ?>
