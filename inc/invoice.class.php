@@ -18,7 +18,7 @@ class PluginInvoiceInvoice extends CommonDBTM {
 
    /**
     * @see PluginInvoiceInvoice::getRightProf()
-	based on profile tab Invoice
+	  *based on profile tab Invoice
    **/
   public static function getRightProf(){
 	  global $DB;
