@@ -5,7 +5,7 @@ include_once (GLPI_ROOT . "/inc/includes.php");
 
 setlocale(LC_TIME, "".$_SESSION['glpilanguage'].".utf8");
 
-		if (!empty($_POST['client'])) :
+		if ($_POST['client'] != 'select') :
 
 			$format = PluginInvoiceReport::getDateFormat();
 			$report = new PluginInvoiceReport();
@@ -348,9 +348,8 @@ setlocale(LC_TIME, "".$_SESSION['glpilanguage'].".utf8");
 
 			else :
 
-        echo "<script>alert('Select client.')</script>";
+        echo "<script>alert('Select client')</script>";
 				echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=invoice.php'>";
 
 			 endif;
-
 ?>

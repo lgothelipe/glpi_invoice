@@ -50,7 +50,7 @@
 
   echo "<td>Client: ";
   echo "<select name='client'>";
-  echo "<option value='' selected>Select client</option>";
+  echo "<option value='select' selected>Select client</option>";
 	$sqlquery = "SELECT id, name FROM glpi_entities ORDER BY name";
 	$result = $DB->query($sqlquery) or die ("erro");
 	while ($rows = $DB->fetch_assoc($result)) {
