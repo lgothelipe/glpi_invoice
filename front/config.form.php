@@ -32,7 +32,7 @@ if ($_POST['config_context'] == 'services' || $_GET['context'] == 'services') {
   if ($_POST["password"] != '**********') {
     $update = "UPDATE glpi_plugin_invoice_email
     SET host='" . $_POST["host"] . "', port='" . $_POST["port"] . "', user='" . $_POST["user"] . "',  password='" . $_POST["password"] . "'
-    WHERE id =" . $_POST["id"];
+    WHERE id = 1";
     $DB->query($update) or die ("error updating email");
   }
   Html::back();

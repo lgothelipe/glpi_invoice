@@ -50,7 +50,10 @@ function plugin_invoice_install() {
                ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";
       $DB->queryOrDie($query, $DB->error());
 
-	  $DB->query($insert);
+			$insert = "INSERT INTO `glpi_plugin_invoice_email` (`id`, `host`, `port`, `user`, `password`)
+			VALUES ('1', 'host', '587', 'user', 'password')";
+
+	  	$DB->queryOrDie($insert, $DB->error());
 
    }
 
