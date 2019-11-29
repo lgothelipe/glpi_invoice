@@ -1,0 +1,1 @@
+logo-"entity_id".png
