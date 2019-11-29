@@ -9,12 +9,15 @@ class PluginInvoiceConfig extends CommonDBTM {
   static function getServicesPage() {
     global $DB;
 
+    $date = new DateTime();
+  	$date->modify("last day of this month");
+
     $rowedit['entities_id'] = '';
     $rowedit['name'] = '';
     $rowedit['cost'] = '';
     $rowedit['content'] = '';
     $rowedit['start_date'] = date('Y-m-01');
-    $rowedit['end_date'] = date('Y-m-d');
+    $rowedit['end_date'] = $date->format("Y-m-d");
 
       if(!empty($_GET['id'])) {
 
