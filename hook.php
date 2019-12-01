@@ -14,6 +14,9 @@ function plugin_invoice_install() {
 	  $query = "CREATE TABLE `glpi_plugin_invoice_profiles` (
                   `id` int(11) NOT NULL auto_increment,
 				  `profiles_id` int(11) NOT NULL,
+					`show_invoice` int(11) NOT NULL,
+					`email_invoice` int(11) NOT NULL,
+					`config_invoice` int(11) NOT NULL,
 				  `is_set` int(11) NOT NULL,
 				  UNIQUE KEY unique_prof (profiles_id),
                   PRIMARY KEY  (`id`)

@@ -3,6 +3,9 @@
 define('GLPI_ROOT', '../../..');
 include (GLPI_ROOT . "/inc/includes.php");
 
+if (PluginInvoiceInvoice::getRightProf()['email_invoice'] == 1) {
+
+/*
 header('Content-Type: text/html; charset=UTF-8');
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -14,5 +17,9 @@ if (!empty($_POST['cliente']))  {
 Html::back();
 }
 
-Html::back();
+*/
+} else {
+  //Permission error
+  Html::displayRightError();
+}
 ?>

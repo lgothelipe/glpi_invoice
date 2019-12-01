@@ -1,26 +1,22 @@
 <?php
-
 include ('../../../inc/includes.php');
 
-$prof_id =	$_POST["id"];
-$isset = $_POST["box_is_set"];
+if(empty($_POST["is_set"])) {
 
-if($isset == 1) {
-
-$insert = "INSERT INTO glpi_plugin_invoice_profiles (profiles_id, is_set)
-					VALUES ('$prof_id', '$isset')
-					ON DUPLICATE KEY UPDATE is_set='$isset'";
-
+	$_POST["is_set"] = '1';
+	$insert = "INSERT INTO glpi_plugin_invoice_profiles (profiles_id, show_invoice, email_invoice, config_invoice, is_set)
+						VALUES ('".$_POST["profiles_id"]."', '".$_POST["show_invoice"]."', '".$_POST["email_invoice"]."', '".$_POST["config_invoice"]."', '".$_POST["is_set"]."')";
 	$DB->query($insert) or die ("error");
 
 } else {
 
-$delete = "DELETE FROM glpi_plugin_invoice_profiles
-					WHERE profiles_id='$prof_id'";
+	$update = "UPDATE glpi_plugin_invoice_profiles
+						SET show_invoice='".$_POST["show_invoice"]."', email_invoice='".$_POST["email_invoice"]."', config_invoice='".$_POST["config_invoice"]."'
+						WHERE profiles_id='".$_POST["profiles_id"]."'";
+	$DB->query($update) or die ("error");
 
-	$DB->query($delete) or die ("error");
 }
 
-echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=../../../front/profile.form.php?id=".$prof_id."'>";
+HTML::back();
 
 ?>

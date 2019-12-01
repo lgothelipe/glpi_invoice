@@ -59,30 +59,43 @@ class PluginInvoiceProfile extends Profile {
       if ($canedit) {
         echo "<form name='form' action='../plugins/invoice/front/prof.form.php' method='post'>";
       }
-      echo Html::hidden('config_context', ['value' => 'invoice']);
+      echo Html::hidden('config_context', ['value' => 'invoice_rights']);
       echo Html::hidden('config_class', ['value' => __CLASS__]);
       echo "<div class='center' id='tabsbody'>";
-      echo "<table class='tab_cadre_fixe' style='width:95%;'>";
-      echo "<tr><th>" . __('Setup') . "</th></tr>";
-      echo "</table>";
       echo "<table class='tab_cadre_fixehov'>";
+      echo "<tr class='tab_bg_5'><th colspan='2'>".__('Invoice Plugin')."</th></tr>\n";
+
       echo "<tr class='tab_bg_2'>";
-      echo "<td width='20%'>" . __('View Invoice', 'invoice') . "</td>";
-      echo "<td>";
-      Html::showCheckbox(array('name'    => 'box_is_set',
-                               'checked' => $effective_rights['is_set']));
+      echo "<td width=30%>".__('Preview invoices')."</td><td>";
+      Html::showCheckbox(array('name'    => 'show_invoice',
+                               'checked' => $effective_rights['show_invoice']));
       echo "</td></tr>\n";
-      echo "</table>";
-      echo "<td><input type='hidden' id='id' name='id' value=".$_GET['id']."></td>";
+
+      echo "<tr class='tab_bg_2'>";
+      echo "<td width=30%>".__('Send invoices via email')."</td><td>";
+      Html::showCheckbox(array('name'    => 'email_invoice',
+                               'checked' => $effective_rights['email_invoice']));
+      echo "</td></tr>\n";
+
+      echo "<tr class='tab_bg_2'>";
+      echo "<td width=30%>".__('Ivoice configuration')."</td><td>";
+      Html::showCheckbox(array('name'    => 'config_invoice',
+                               'checked' => $effective_rights['config_invoice']));
+      echo "</td></tr>\n";
 
       if ($canedit) {
-         echo "<tr class='tab_bg_2'>";
-         echo "<td class='center'>";
-         echo "<input type='submit' name='save' class='submit' value=\"" . _sx('button', 'Save') . "\">";
-         echo "</td></tr>";
+         echo "<tr class='tab_bg_1'>";
+         echo "<td colspan='4' class='center'>";
+         echo "<input type='hidden' name='profiles_id' value='".$_GET['id']."'>";
+         echo "<input type='hidden' name='is_set' value='".$effective_rights['is_set']."'>";
+         echo "<input type='submit' name='update' value=\""._sx('button','Save')."\" class='submit'>";
+         echo "</td></tr>\n";
+         echo "</table>\n";
+         Html::closeForm();
+      } else {
+         echo "</table>\n";
       }
-      echo "</table></div>";
-      Html::closeForm();
+      echo "</div>";
    }
 }
 ?>

@@ -5,7 +5,7 @@
 	include (GLPI_ROOT . "/inc/includes.php");
 
 	//check right
-	if(PluginInvoiceInvoice::getRightProf() == 1) {
+	if(PluginInvoiceInvoice::getRightProf()['show_invoice'] == 1) {
 
 	$date = new DateTime();
 	$date->modify("first day of previous month");

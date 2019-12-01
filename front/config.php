@@ -5,7 +5,7 @@ define('GLPI_ROOT', '../../..');
 include (GLPI_ROOT . "/inc/includes.php");
 
 //check right
-if(PluginInvoiceInvoice::getRightProf() == 1) {
+if(PluginInvoiceInvoice::getRightProf()['config_invoice'] == 1) {
 
 Html::header(__('Invoice Config'), $_SERVER['PHP_SELF'], 'management', 'plugininvoiceinvoice');
 

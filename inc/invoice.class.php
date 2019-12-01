@@ -25,14 +25,14 @@ class PluginInvoiceInvoice extends CommonDBTM {
 
 	  $activeprofile = $_SESSION['glpiactiveprofile']['id'];
 
-	  $query_rgt = "SELECT is_set
+	  $query_rgt = "SELECT show_invoice, email_invoice, config_invoice
     FROM glpi_plugin_invoice_profiles
     WHERE profiles_id = ".$activeprofile;
 
     $result_rgt = $DB->query($query_rgt);
-	  $rgt = $DB->fetch_assoc($result_rgt);
+	  $right = $DB->fetch_assoc($result_rgt);
 
-	  return $rgt['is_set'];
+	  return $right;
 
   }
 
