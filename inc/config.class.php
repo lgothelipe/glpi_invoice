@@ -44,26 +44,26 @@ class PluginInvoiceConfig extends CommonDBTM {
     echo "</table>";
     echo "<table class='tab_cadre_fixehov'>";
     echo "<tr class='tab_bg_2'>";
-    echo "<td width='15%'>" . __('Entity') . ":<span class='required'>*</span></td>";
+    echo "<td width='10%'>" . __('Entity') . ":<span class='required'>*</span></td>";
     echo "<td colspan='3>";
     Dropdown::show('Entity', array('value' => $rowedit['entities_id']));
     echo "</td></tr>\n";
     echo "<tr class='tab_bg_2'>";
-    echo "<td width='15%'>" . __('Name') . "<span class='required'>*</span></td>";
+    echo "<td width='10%'>" . __('Name') . ":<span class='required'>*</span></td>";
     echo "<td><input type='text' class='form-control' name='name' value='" . $rowedit['name'] . "'></td>";
-    echo "<td width='15%'>" . __('Cost') . "<span class='required'>*</span></td>";
+    echo "<td width='10%'>" . __('Cost') . ":<span class='required'>*</span></td>";
     echo "<td><input type='text' class='form-control' name='cost' value='" . $rowedit['cost'] . "'></td>";
     echo "</tr>\n";
     echo "<tr class='tab_bg_2'>";
-    echo "<td width='15%'>" . __('Description') . "<span class='required'>*</span></td>";
+    echo "<td width='10%'>" . __('Description') . ":<span class='required'>*</span></td>";
     echo "<td colspan='3'><input type='text' class='form-control' name='content' value='" . $rowedit['content'] . "' style='width: 80%;'></td>";
     echo "</tr>\n";
     echo "<tr class='tab_bg_2'>";
-    echo "<td width='15%'>" . __('Start date') . "<span class='required'>*</span></td>";
+    echo "<td width='10%'>" . __('Start date') . ":<span class='required'>*</span></td>";
     echo "<td width='30%'>";
     Html::showDateFormItem("start_date", $rowedit['start_date'], false, true);
-    echo "<td width='15%'>" . __('End date') . "<span class='required'>*</span></td>";
-    echo "<td>";
+    echo "<td width='10%'>" . __('End date') . ":<span class='required'>*</span></td>";
+    echo "<td width='30%'>";
     Html::showDateFormItem("end_date", $rowedit['end_date'], false, true);
     echo "</td></tr>\n";
       if(!empty($_GET['id'])) {
@@ -138,15 +138,15 @@ class PluginInvoiceConfig extends CommonDBTM {
     echo "</table>";
     echo "<table class='tab_cadre_fixehov'>";
     echo "<tr class='tab_bg_2'>";
-    echo "<td width='20%'>" . __('Host') . "<span class='required'>*</span></td>";
+    echo "<td width='15%'>" . __('Host') . ":<span class='required'>*</span></td>";
     echo "<td><input type='text' class='form-control' name='host' value='" . $row_e['host'] . "'></td>";
-    echo "<td width='20%'>" . __('Port') . " (TLS enabled)<span class='required'>*</span></td>";
+    echo "<td width='15%'>" . __('Port') . ": (TLS enabled)<span class='required'>*</span></td>";
     echo "<td><input type='text' class='form-control' name='port' value='" . $row_e['port'] . "'></td>";
     echo "</tr>";
     echo "<tr class='tab_bg_2'>";
-    echo "<td width='20%'>" . __('User') . "<span class='required'>*</span></td>";
+    echo "<td width='15%'>" . __('User') . ":<span class='required'>*</span></td>";
     echo "<td><input type='text' class='form-control' name='user' value='" . $row_e['user'] . "'></td>";
-    echo "<td width='20%'>" . __('Password') . "<span class='required'>*</span></td>";
+    echo "<td width='15%'>" . __('Password') . ":<span class='required'>*</span></td>";
     echo "<td><input type='password' class='form-control' name='password' value='**********'></td>";
     echo "</tr>";
     echo "<input type='hidden' name='id' value=".$row_e['id'].">";
@@ -187,14 +187,14 @@ class PluginInvoiceConfig extends CommonDBTM {
     echo "</table>";
     echo "<table class='tab_cadre_fixehov'>";
     echo "<tr class='tab_bg_2'>";
-    echo "<td>" . __('Entity') . "<span class='required'>*</span></td>";
+    echo "<td>" . __('Entity') . ":<span class='required'>*</span></td>";
     echo "<td style='padding-right:60px;'>";
     Dropdown::show('Entity', array('value' => $row_d['entities_id']));
     echo "</td>";
-    echo "<td>" . __('From') . "<span class='required'>*</span></td>";
+    echo "<td>" . __('From') . ":<span class='required'>*</span></td>";
     echo "<td style='padding-right:60px;'><input style='width:180px;' type='text' class='form-control' name='email_from' value='" . $row_d['email_from'] . "'></td>";
     echo "</td>";
-    echo "<td>" . __('To') . "<span class='required'>*</span></td>";
+    echo "<td>" . __('To') . ":<span class='required'>*</span></td>";
     echo "<td style='padding-right:60px;'><input style='width:180px;' type='text' class='form-control' name='email_to' value='" . $row_d['email_to'] . "'></td>";
     echo "</td></tr>";
       if(!empty($_GET['id'])) {
@@ -273,14 +273,15 @@ class PluginInvoiceConfig extends CommonDBTM {
       echo "</table>";
       echo "<table class='tab_cadre_fixehov'>";
       echo "<tr class='tab_bg_2'>";
-      echo "<td>" . __('Task category') . "<span class='required'>*</span></td>";
-      echo "<td>";
+      echo "<td width='15%'>" . __('Task category') . ":<span class='required'>*</span></td>";
+      echo "<td width='35%'>";
       TaskCategory::dropdown(array('value'  => $row_c['taskcategories_id'],
                                    'entity' => $_SESSION['glpiactive_entity'],
                                    'condition' => "`is_active` = '1'"));
       echo "</td>";
-      echo "<td>" . __('Cost') . "<span class='required'>:* </span>";
-      echo "<input style='width:80px;' type='text' class='form-control' name='cost' value=".$row_c['cost']."></td>";
+      echo "<td width='15%'>" . __('Cost') . "<span class='required'>:* </span></td>";
+      echo "<td>";
+      echo "<input width='35%' type='text' class='form-control' name='cost' value=".$row_c['cost']."></td>";
       echo "</tr>\n";
         if(!empty($_GET['id'])) {
           echo "<input type='hidden' name='id' value=".$_GET['id'].">";
