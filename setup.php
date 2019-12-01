@@ -42,10 +42,10 @@ function plugin_init_invoice() {
 }
 
 function plugin_invoice_check_prerequisites(){
-        if (GLPI_VERSION>=0.90){
+        if (GLPI_VERSION>=9.1){
                 return true;
         } else {
-                echo "GLPI version NOT compatible. Requires GLPI 0.90";
+                echo "GLPI version NOT compatible. Requires GLPI 9.1";
         }
 }
 
