@@ -4,8 +4,10 @@
 	define('GLPI_ROOT', '../../..');
 	include (GLPI_ROOT . "/inc/includes.php");
 
+	Html::header("Invoice", $_SERVER['PHP_SELF'], 'management', 'plugininvoiceinvoice');
+
 	//check right
-	if(PluginInvoiceInvoice::getRightProf()['show_invoice'] == 1) {
+	if(PluginInvoiceInvoice::checkProfileRight()['show_invoice'] == 1) {
 
 	$date = new DateTime();
 	$date->modify("first day of previous month");
@@ -15,8 +17,6 @@
 	$date->modify("last day of previous month");
 	$enddate = $date->format("Y-m-d");
 	$rand = rand(10001,99999);
-
-	Html::header("Invoice", $_SERVER['PHP_SELF'], 'management', 'plugininvoiceinvoice');
 
 	//report
   echo "<div class='center' id='tabsbody'>";
