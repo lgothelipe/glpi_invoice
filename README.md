@@ -1,5 +1,3 @@
-# invoice
-
 ## Plugin invoice for GLPI
 
 This plugin creates a report based on ticket tasks
