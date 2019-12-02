@@ -26,8 +26,8 @@ setlocale(LC_TIME, "".$_SESSION['glpilanguage'].".utf8");
 			$subtotal = number_format($sumt + $sumserv, 2);
 
 			//tax
-			$tax = number_format($subtotal * ($_POST['tax'] / 100), 2);
-			$grandtotal = number_format($subtotal + $tax, 2);
+			$tax = number_format(($sumt + $sumserv) * ($_POST['tax'] / 100), 2);
+			$grandtotal = number_format($sumt + $sumserv + $tax, 2);
 
 ?>
 
