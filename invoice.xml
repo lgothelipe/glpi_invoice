@@ -1,49 +1,52 @@
- <root>
-            <name>Invoice</name>
-            <key>invoice</key>
-            <state>beta</state> <!-- stable | unstable | beta | alpha -->
-            <logo>https://raw.githubusercontent.com/lgothelipe/glpi_invoice/master/invoice.png</logo>
-            <description>
-               <short>
-                  <en>Create invoices based on Ticket tasks</en>
-               </short>
-               <long>
-                  <en>This plugin allows you to create and send via email invoices based on ticket tasks. Set up cost of tasks categories and montly services to be added to the invoice.</en>
-               </long>
-            </description>
-            <homepage>https://github.com/lgothelipe/glpi_invoice</homepage>
-            <download>https://github.com/lgothelipe/glpi_invoice</download>
-            <issues>https://github.com/lgothelipe/glpi_invoice/issues</issues>
-            <readme>https://github.com/lgothelipe/glpi_invoice/blob/master/README.md</readme>
-            <authors>
-               <author>Lucas Gothelipe</author>
-            </authors>
-            <versions>
-               <version>
-                  <num>1.0.0</num>
-                  <compatibility>9.1.x</compatibility>
-               </version>
-            </versions>
-            <langs>
-               <lang>en_GB</lang>
-            </langs>
-            <license>GPL v3</license>
-            <tags>
-               <en>
-                  <tag>Invoice</tag>
-               </en>
-               <en>
-                  <tag>Management</tag>
-               </en>
-			   <en>
-                  <tag>Payment</tag>
-               </en>
-			   <en>
-                  <tag>Bill</tag>
-               </en>
-            </tags>
-            <screenshots>
-               <screenshot>https://raw.githubusercontent.com/lgothelipe/multimedia/master/invoice/invoice-form.PNG</screenshot>
-               <screenshot>https://raw.githubusercontent.com/lgothelipe/multimedia/master/invoice/invoice-preview.PNG</screenshot>
-            </screenshots>
-         </root>
+  <root>
+      <name>Invoice</name>
+      <key>invoice</key>
+      <state>beta</state> <!-- stable | unstable | beta | alpha -->
+      <logo>https://raw.githubusercontent.com/lgothelipe/glpi_invoice/master/invoice.png</logo>
+      <description>
+         <short>
+            <en>Create invoices based on Ticket tasks</en>
+         </short>
+         <long>
+            <en>This plugin allows you to create and send via email invoices based on ticket tasks. Set up cost of tasks categories and montly services to be added to the invoice.</en>
+         </long>
+      </description>
+      <homepage>https://github.com/lgothelipe/glpi_invoice</homepage>
+      <download>https://github.com/lgothelipe/glpi_invoice</download>
+      <issues>https://github.com/lgothelipe/glpi_invoice/issues</issues>
+      <readme>https://github.com/lgothelipe/glpi_invoice/blob/master/README.md</readme>
+      <authors>
+         <author>Lucas Gothelipe</author>
+      </authors>
+      <versions>
+         <version>
+            <num>1.0.0</num>
+            <compatibility>9.1.x</compatibility>
+            <compatibility>9.2.x</compatibility>
+            <compatibility>9.3.x</compatibility>
+            <compatibility>9.4.x</compatibility>
+         </version>
+      </versions>
+      <langs>
+         <lang>en_GB</lang>
+      </langs>
+      <license>GPL v3</license>
+      <tags>
+         <en>
+            <tag>Invoice</tag>
+         </en>
+         <en>
+            <tag>Management</tag>
+         </en>
+   <en>
+            <tag>Payment</tag>
+         </en>
+   <en>
+            <tag>Bill</tag>
+         </en>
+      </tags>
+      <screenshots>
+         <screenshot>https://raw.githubusercontent.com/lgothelipe/multimedia/master/invoice/invoice-form.PNG</screenshot>
+         <screenshot>https://raw.githubusercontent.com/lgothelipe/multimedia/master/invoice/invoice-preview.PNG</screenshot>
+      </screenshots>
+   </root>
