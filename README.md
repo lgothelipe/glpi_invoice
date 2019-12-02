@@ -2,7 +2,7 @@
 
 ## Plugin invoice for GLPI
 
-This plugin create a report based on ticket tasks
+This plugin creates a report based on ticket tasks
 
 1. Install plugin Invoice
 2. Go to Profiles, edit a profile, click on Invoice and set up the access
