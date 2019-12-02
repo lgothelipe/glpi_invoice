@@ -10,4 +10,4 @@ This plugin creates a report based on ticket tasks
 6. Only tasks with a task category and categories cost set up will be on the report.
 
 
-Compatible with GLPI 9.1.x, 9.2.x
+Compatible with GLPI 9.1.x, 9.2.x, 9.3.x
