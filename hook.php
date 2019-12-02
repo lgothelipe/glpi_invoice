@@ -8,7 +8,7 @@ function plugin_invoice_install() {
 	global $DB, $LANG;
 
 	//Create table only if it does not exists yet!
-   if (!TableExists('glpi_plugin_invoice_profiles')) {
+   if (!$DB->tableExists('glpi_plugin_invoice_profiles')) {
       //table creation query
 
 	  $query = "CREATE TABLE `glpi_plugin_invoice_profiles` (
@@ -25,7 +25,7 @@ function plugin_invoice_install() {
 
    }
 
-	   if (!TableExists('glpi_plugin_invoice_services')) {
+	   if (!$DB->tableExists('glpi_plugin_invoice_services')) {
       //table creation query
       $query = "CREATE TABLE `glpi_plugin_invoice_services` (
                   `id` int(11) NOT NULL auto_increment,
@@ -41,7 +41,7 @@ function plugin_invoice_install() {
 
 	}
 
-		if (!TableExists('glpi_plugin_invoice_email')) {
+		if (!$DB->tableExists('glpi_plugin_invoice_email')) {
       //table creation query
       $query = "CREATE TABLE `glpi_plugin_invoice_email` (
                   `id` int(11) NOT NULL auto_increment,
@@ -60,7 +60,7 @@ function plugin_invoice_install() {
 
    }
 
-   if (!TableExists('glpi_plugin_invoice_recipients')) {
+   if (!$DB->tableExists('glpi_plugin_invoice_recipients')) {
       //table creation query
       $query = "CREATE TABLE `glpi_plugin_invoice_recipients` (
                   `id` int(11) NOT NULL auto_increment,
@@ -74,7 +74,7 @@ function plugin_invoice_install() {
 
    }
 
-	 if (!TableExists('glpi_plugin_invoice_categories')) {
+	 if (!$DB->tableExists('glpi_plugin_invoice_categories')) {
       //table creation query
       $query = "CREATE TABLE `glpi_plugin_invoice_categories` (
                   `id` int(11) NOT NULL auto_increment,
@@ -98,31 +98,31 @@ function plugin_invoice_install() {
 function plugin_invoice_uninstall() {
 	global $DB;
 
-    if (TableExists("glpi_plugin_invoice_profiles")) {
+    if ($DB->tableExists("glpi_plugin_invoice_profiles")) {
 
 		$query = "DROP TABLE `glpi_plugin_invoice_profiles`";
 		$DB->query($query) or die("error deleting glpi_plugin_invoice_profiles");
 	}
 
-	if (TableExists("glpi_plugin_invoice_services")) {
+	if ($DB->tableExists("glpi_plugin_invoice_services")) {
 
 		$query = "DROP TABLE `glpi_plugin_invoice_services`";
 		$DB->query($query) or die("error deleting glpi_plugin_invoice_services");
 	}
 
-	if (TableExists("glpi_plugin_invoice_email")) {
+	if ($DB->tableExists("glpi_plugin_invoice_email")) {
 
 		$query = "DROP TABLE `glpi_plugin_invoice_email`";
 		$DB->query($query) or die("error deleting glpi_plugin_invoice_email");
 	}
 
-	if (TableExists("glpi_plugin_invoice_recipients")) {
+	if ($DB->tableExists("glpi_plugin_invoice_recipients")) {
 
 		$query = "DROP TABLE `glpi_plugin_invoice_recipients`";
 		$DB->query($query) or die("error deleting glpi_plugin_invoice_recipients");
 	}
 
-	if (TableExists("glpi_plugin_invoice_categories")) {
+	if ($DB->tableExists("glpi_plugin_invoice_categories")) {
 
 		$query = "DROP TABLE `glpi_plugin_invoice_categories`";
 		$DB->query($query) or die("error deleting glpi_plugin_invoice_categories");
