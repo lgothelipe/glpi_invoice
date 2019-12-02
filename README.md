@@ -11,4 +11,5 @@ This plugin creates a report based on ticket tasks
 
 
 Version 1.0.0 - compatible with GLPI 9.1.x, 9.2.x, 9.3.x
+
 Version 1.1.0 - compatible with GLPI 9.4.x

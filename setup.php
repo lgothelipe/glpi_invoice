@@ -1,6 +1,6 @@
 <?php
 
-define ('PLUGIN_INVOICE_VERSION', '1.0.0');
+define ('PLUGIN_INVOICE_VERSION', '1.1.0');
 
 /**
  * Init the hooks of the plugins - Needed
@@ -29,23 +29,23 @@ function plugin_init_invoice() {
  function plugin_version_invoice() {
    return [
       'name'           => 'Invoice',
-      'version'        => '1.0.0',
+      'version'        => '1.1.0',
       'author'         => 'Lucas Gothelipe',
       'license'        => 'GLPv3',
       'homepage'       => 'https://github.com/lgothelipe/glpi_invoice',
       'requirements'   => [
          'glpi'   => [
-            'min' => '9.1'
+            'min' => '9.4'
          ]
       ]
    ];
 }
 
 function plugin_invoice_check_prerequisites(){
-        if (GLPI_VERSION>=9.1){
+        if (GLPI_VERSION>=9.4){
                 return true;
         } else {
-                echo "GLPI version NOT compatible. Requires GLPI 9.1";
+                echo "GLPI version NOT compatible. Requires GLPI 9.4";
         }
 }
 
