@@ -29,10 +29,6 @@ setlocale(LC_TIME, "".$_SESSION['glpilanguage'].".utf8");
 			$tax = number_format($subtotal * ($_POST['tax'] / 100), 2);
 			$grandtotal = number_format($subtotal + $tax, 2);
 
-
-
-//include ("../inc/report_query.php");
-
 ?>
 
 <!doctype html>
@@ -196,9 +192,13 @@ setlocale(LC_TIME, "".$_SESSION['glpilanguage'].".utf8");
             </tr>
         </table>
 	<div>
-        <table cellpadding="0" cellspacing="0">
 
 <!-- Task hours -->
+
+	<?php
+			if(!empty($tasks->num_rows))	 {
+	?>
+        <table cellpadding="0" cellspacing="0">
 
             <tr class="heading">
 				<td style="width:120px;">
@@ -222,12 +222,11 @@ setlocale(LC_TIME, "".$_SESSION['glpilanguage'].".utf8");
                 </td>
             </tr>
 
-				<?php
-					if(!empty($tasks))	 {
-						while($row_tasks = $DB->fetch_assoc($tasks)) {
-				?>
-			<tr class="item">
-				<td>
+	<?php
+			while($row_tasks = $DB->fetch_assoc($tasks)) {
+	?>
+							<tr class="item">
+								<td>
                     <?php echo $row_tasks["date"]; ?>
                 </td>
 
@@ -248,18 +247,19 @@ setlocale(LC_TIME, "".$_SESSION['glpilanguage'].".utf8");
                     $<?php echo number_format($row_tasks["cost"] * $row_tasks["actiontime"] / 3600, 2); ?>
                 </td>
             </tr>
-				<?php
-					}
-						}
-				?>
-
+	<?php
+	 }
+	?>
 		 <tr><td colspan="5" style="height: 15px"> </td></tr>
 	 		</table>
+	<?php
+	}
+	?>
 
 <!--Monthly services -->
 		<br>
 <?php
-				 if(!empty($services))	 {
+				 if(!empty($services->num_rows)) {
 ?>
 	 		<table cellpadding="0" cellspacing="0">
 
@@ -302,12 +302,11 @@ setlocale(LC_TIME, "".$_SESSION['glpilanguage'].".utf8");
  <?php
 	 }
  ?>
-
-		<tr><td colspan="4" style="height: 15px"> </td></tr>
+		<tr><td colspan="4" style="height: 15px"></td></tr>
 
 			</table>
 <?php
-}
+	}
 ?>
 <!--Total cost -->
 			<table cellpadding="0" cellspacing="0">
@@ -339,12 +338,10 @@ setlocale(LC_TIME, "".$_SESSION['glpilanguage'].".utf8");
         </table>
 	</div>
     </div>
-
+</body>
 </html>
 
 <?php
-
-//include ('report_pdf.php');
 
 			else :
 

@@ -61,10 +61,20 @@ class PluginInvoiceConfig extends CommonDBTM {
     echo "<tr class='tab_bg_2'>";
     echo "<td width='10%'>" . __('Start date') . ":<span class='required'>*</span></td>";
     echo "<td width='30%'>";
-    Html::showDateFormItem("start_date", $rowedit['start_date'], false, true);
+    Html::showDateField("start_date", array('value'      => $rowedit['start_date'], //yyyy-mm-dd
+  																					'maybeempty' => false,
+  																					'canedit'    => true,
+  																					'min'        => '',
+  																					'max'        => '',
+  																					'showyear'   => true));
     echo "<td width='10%'>" . __('End date') . ":<span class='required'>*</span></td>";
     echo "<td width='30%'>";
-    Html::showDateFormItem("end_date", $rowedit['end_date'], false, true);
+    Html::showDateField("end_date", array('value'      => $rowedit['end_date'], //yyyy-mm-dd
+  																					'maybeempty' => false,
+  																					'canedit'    => true,
+  																					'min'        => '',
+  																					'max'        => '',
+  																					'showyear'   => true));
     echo "</td></tr>\n";
       if(!empty($_GET['id'])) {
         echo "<input type='hidden' name='id' value=".$_GET['id'].">";

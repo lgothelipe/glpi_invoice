@@ -9,6 +9,7 @@
 	//check right
 	if(PluginInvoiceInvoice::getRightProf('show_invoice') == 1) {
 
+	$format = PluginInvoiceReport::getDateFormat();
 	$date = new DateTime();
 	$date->modify("first day of previous month");
 	$startdate = $date->format("Y-m-d");
@@ -64,7 +65,7 @@
   echo "<td>".__('Invoice')."#: ";
   echo "<input style='width: 20%;' type='text' name='invonum' value=".$rand."></td>";
   echo "<td>" .__('Due Date') . ": ";
-  echo "<input style='width: 25%;' type='text' name='due_date' value=".date('05/m/Y')."></td>";
+  echo "<input style='width: 25%;' type='text' name='due_date' value=".date($format)."></td>";
   echo "<td>" .__('Tax') . " %: ";
   echo "<input style='width: 15%;' type='text' name='tax' value='10'></td>";
   echo "<td></td>";
@@ -118,7 +119,7 @@
 	echo "<td>".__('Invoice')."#: ";
   echo "<input style='width: 20%;' type='text' name='invonum' value=".$rand."></td>";
   echo "<td>" .__('Due Date') . ": ";
-  echo "<input style='width: 25%;' type='text' name='due_date' value=".date('05/m/Y')."></td>";
+  echo "<input style='width: 25%;' type='text' name='due_date' value=".date($format)."></td>";
   echo "<td>" .__('Tax') . " %: ";
   echo "<input style='width: 15%;' type='text' name='tax' value='10'></td>";
   echo "<td></td>";
