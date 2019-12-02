@@ -7,7 +7,7 @@ include (GLPI_ROOT . "/inc/includes.php");
 Html::header(__('Invoice Config'), $_SERVER['PHP_SELF'], 'management', 'plugininvoiceinvoice');
 
 //check right
-if(PluginInvoiceInvoice::checkProfileRight()['config_invoice'] == 1) {
+if(PluginInvoiceInvoice::getRightProf('config_invoice') == 1) {
 
 echo "<div class='center' id='tabsbody'>";
 echo "<table class='tab_cadre_fixe' style='width:95%;'>";

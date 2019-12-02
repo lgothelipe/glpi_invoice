@@ -7,7 +7,7 @@
 	Html::header("Invoice", $_SERVER['PHP_SELF'], 'management', 'plugininvoiceinvoice');
 
 	//check right
-	if(PluginInvoiceInvoice::checkProfileRight()['show_invoice'] == 1) {
+	if(PluginInvoiceInvoice::getRightProf('show_invoice') == 1) {
 
 	$date = new DateTime();
 	$date->modify("first day of previous month");

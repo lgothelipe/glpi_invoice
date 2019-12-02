@@ -5,7 +5,7 @@ include (GLPI_ROOT . "/inc/includes.php");
 
 Html::header("Invoice", $_SERVER['PHP_SELF'], 'management', 'plugininvoiceinvoice');
 
-if (PluginInvoiceInvoice::checkProfileRight()['email_invoice'] == 1) {
+if (PluginInvoiceInvoice::getRightProf('email_invoice') == 1) {
 
 /*
 header('Content-Type: text/html; charset=UTF-8');
