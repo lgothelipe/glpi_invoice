@@ -106,7 +106,7 @@
 
   echo "<td>Client: ";
   echo "<select name='client'>";
-  echo "<option value='' selected>Select client</option>";
+  echo "<option value='select' selected>Select client</option>";
 	$result = $DB->query($sqlquery) or die ("erro");
 	while ($rows = $DB->fetch_assoc($result)) {
   echo "<option value='".$rows['id']."'>".$rows['name']."</option>";
