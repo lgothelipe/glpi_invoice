@@ -2,7 +2,7 @@
       <name>Invoice</name>
       <key>invoice</key>
       <state>beta</state> <!-- stable | unstable | beta | alpha -->
-      <logo>https://raw.githubusercontent.com/lgothelipe/glpi_invoice/master/invoice.png</logo>
+      <logo>https://lgothelipe.github.io/glpi_invoice/invoice.png</logo>
       <description>
          <short>
             <en>Create invoices based on Ticket tasks</en>
@@ -14,7 +14,7 @@
       <homepage>https://github.com/lgothelipe/glpi_invoice</homepage>
       <download>https://github.com/lgothelipe/glpi_invoice</download>
       <issues>https://github.com/lgothelipe/glpi_invoice/issues</issues>
-      <readme>https://github.com/lgothelipe/glpi_invoice/blob/master/README.md</readme>
+      <readme>https://lgothelipe.github.io/glpi_invoice</readme>
       <authors>
          <author>Lucas Gothelipe</author>
       </authors>
@@ -46,7 +46,7 @@
          </en>
       </tags>
       <screenshots>
-         <screenshot>https://raw.githubusercontent.com/lgothelipe/multimedia/master/invoice/invoice-form.PNG</screenshot>
-         <screenshot>https://raw.githubusercontent.com/lgothelipe/multimedia/master/invoice/invoice-preview.PNG</screenshot>
+         <screenshot>https://lgothelipe.github.io/glpi_invoice/screenshot/invoice-form.PNG</screenshot>
+         <screenshot>https://lgothelipe.github.io/glpi_invoice/screenshot/invoice-preview.PNG</screenshot>
       </screenshots>
    </root>
